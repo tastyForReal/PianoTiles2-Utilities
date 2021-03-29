@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Piano Tiles 2 Song Validator</title>
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/codemirror.css" />
+    <link rel="stylesheet" href="styles/material-darker.css" />
+    <script src="scripts/codemirror.js"></script>
+    <script src="scripts/codemirror/javascript/javascript.js"></script>
+    <script src="scripts/lodash.min.js"></script>
+    <script src="scripts/errorchecker.js"></script>
+  </head>
+  <body>
+    <div class="box">
+      <h1>PIANO TILES 2 SONG VALIDATOR</h1>
+      <p>A revamped version of Beeps' Info Checker</p>
+      <p>By tastyFr#3429</p>
+      <p>Version 1.0 - Updated on 3/30/2021</p>
+      <div class="box2">
+        <h3>Input Text</h3>
+      </div>
+      <div id="code"></div>
+      <div class="button"><a href="#" class="ripple">Validate song</button></a></div>
+      <noscript>
+        <p style="color: red; font-family: 'uni_sansregular'; font-size: 16px; text-align: center">
+          JavaScript is disabled in this browser! Please enable it in the browser's settings!
+        </p>
+      </noscript>
+      <p id="result"></p>
+      <div class="box3">
+        <h3>Song Information</h3>
+      </div>
+      <table align="center">
+        <tbody>
+          <tr>
+            <th width="171" style="text-align: left" scope="row">Duration:</th>
+            <td style="text-align: left">0s</td>
+          </tr>
+          <tr>
+            <th style="text-align: left" scope="row">Points per round:</th>
+            <td style="text-align: left">0</td>
+          </tr>
+          <tr>
+            <th style="text-align: left" scope="row">3-crown points:</th>
+            <td style="text-align: left">0</td>
+          </tr>
+          <tr>
+            <th style="text-align: left" scope="row">Speed(s):</th>
+            <td style="text-align: left">0.000, 0.000, 0.000</td>
+          </tr>
+          <tr>
+            <th style="text-align: left" scope="row">baseBeats:</th>
+            <td style="text-align: left">0.0</td>
+          </tr>
+          <tr>
+            <th style="text-align: left" scope="row">Tiles info:</th>
+            <td style="text-align: left">
+              Double tiles: 0<br />
+              Combo tiles: 0<br />
+              Slide tiles: 0<br />
+              Burst tiles: 0
+            </td>
+          </tr>
+          <tr>
+            <th style="text-align: left" scope="row">Calculated difficulty:</th>
+            <td style="text-align: left">none</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <script src="scripts/main.js"></script>
+  </body>
+</html>

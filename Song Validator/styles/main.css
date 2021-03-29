@@ -1,0 +1,216 @@
+::-webkit-scrollbar {
+  background-color: rgba(0, 0, 0, 0.251);
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.502);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: white;
+}
+
+::-webkit-scrollbar-button {
+  background-color: rgba(255, 255, 255, 0.251);
+}
+
+::-webkit-scrollbar-button:hover {
+  background-color: white;
+}
+
+@font-face {
+  font-family: 'uni_sanslight';
+  src: url('../fonts/uni_sans_light-webfont.woff2') format('woff2'),
+    url('../fonts/uni_sans_light-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'uni_sansregular';
+  src: url('../fonts/uni_sans_regular-webfont.woff2') format('woff2'),
+    url('../fonts/uni_sans_regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'uni_sanssemibold';
+  src: url('../fonts/uni_sans_semibold-webfont.woff2') format('woff2'),
+    url('../fonts/uni_sans_semibold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'uni_sansthin';
+  src: url('../fonts/uni_sans_thin-webfont.woff2') format('woff2'),
+    url('../fonts/uni_sans_thin-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'hackregular';
+  src: url('../fonts/hack-regular-webfont.woff2') format('woff2'),
+    url('../fonts/hack-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  background-image: url('../background.png');
+}
+
+.box {
+  background-color: #191919;
+  border-color: #191919;
+  border-radius: 8px;
+  margin: 56.875px 558px 64px;
+  width: 780px;
+  display: block;
+  overflow: auto;
+  margin-top: 3%;
+  -webkit-box-shadow: 0px 0px 24px 8px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 24px 8px rgba(0, 0, 0, 0.5);
+}
+
+.box2 {
+  background: linear-gradient(90deg, #333 0%, #191919 100%);
+  margin: auto;
+  width: 720px;
+  height: 32px;
+  position: relative;
+  top: 5%;
+  display: none;
+}
+
+.box3 {
+  background: linear-gradient(90deg, #333 0%, #191919 100%);
+  margin: auto;
+  width: 363px;
+  height: 32px;
+  position: relative;
+  top: 5%;
+  display: none;
+  -webkit-animation: fadeIn 0.3s linear forwards;
+  -moz-animation: fadeIn 0.3s linear forwards;
+  animation: fadeIn 0.3s linear forwards;
+}
+
+h1 {
+  color: white;
+  font-family: 'uni_sanssemibold';
+  font-size: 32px;
+  text-align: center;
+}
+
+h3 {
+  color: white;
+  font-family: 'uni_sanssemibold';
+  font-size: 18px;
+  position: relative;
+  top: 20%;
+  left: 8px;
+  display: none;
+}
+
+#code {
+  resize: none;
+  width: 720px;
+  height: 315px;
+  position: relative;
+  margin-top: 24px;
+  left: 30px;
+  display: none;
+}
+
+p {
+  color: white;
+  font-family: 'uni_sansregular';
+  font-size: 16px;
+  text-align: center;
+}
+
+#result {
+  font-family: 'uni_sanssemibold';
+}
+
+table {
+  color: white;
+  font-family: 'uni_sanssemibold';
+  font-size: 16px;
+  text-align: center;
+  padding: 16px 16px 24px;
+}
+
+th {
+  color: lime;
+}
+
+.button {
+  text-align: center;
+}
+
+a.ripple {
+  background: linear-gradient(45deg, #ae4bfe 0%, #2ddffe 100%);
+  border-radius: 8px;
+  border-style: none;
+  padding: 12px;
+  font-family: 'uni_sansregular';
+  font-size: 18px;
+  color: white;
+  outline: none;
+  text-decoration: none;
+  margin: 0;
+  margin-top: 64px;
+  position: relative;
+  overflow: hidden;
+  transition: 0.1s;
+  display: none;
+  opacity: 50%;
+}
+
+a.ripple:hover {
+  filter: brightness(1.1);
+}
+
+a.ripple > span {
+  position: absolute;
+  background: #ccc;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  border-radius: 50%;
+  border: 1px solid white;
+  animation: ripples 0.6s linear infinite;
+}
+
+@keyframes ripples {
+  0% {
+    width: 0px;
+    height: 0px;
+    opacity: 50%;
+  }
+  100% {
+    width: 500px;
+    height: 500px;
+    opacity: 0%;
+  }
+}
+
+tbody {
+  -webkit-animation: fadeIn 0.3s linear forwards;
+  -moz-animation: fadeIn 0.3s linear forwards;
+  animation: fadeIn 0.3s linear forwards;
+  display: none;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
