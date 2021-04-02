@@ -124,31 +124,14 @@ const execute = () => checkErrors(editor.getValue())
       document.getElementById('result').innerHTML = '<span style="color: lime;">NO ERRORS!</span>';
     }
 
-    document.querySelector(
-      'body > div > table > tbody > tr:nth-child(1) > td',
-    ).innerHTML = `<span style="color: yellow;">${result.duration}</span>`;
-    document.querySelector(
-      'body > div > table > tbody > tr:nth-child(2) > td',
-    ).innerHTML = `<span style="color: yellow;">${result.score}</span>`;
-    document.querySelector(
-      'body > div > table > tbody > tr:nth-child(3) > td',
-    ).innerHTML = `<span style="color: yellow;">${result.score * 3}</span>`;
-    document.querySelector(
-      'body > div > table > tbody > tr:nth-child(4) > td',
-    ).innerHTML = `<span style="color: yellow;">${result.speeds.join(
-      '</span><span style="color: lime;">,</span> <span style="color: yellow;">',
-    )}`;
-    document.querySelector(
-      'body > div > table > tbody > tr:nth-child(5) > td',
-    ).innerHTML = `<span style="color: yellow;">${result.baseBeats.join(
-      '</span><span style="color: lime;">,</span> <span style="color: yellow;">',
-    )}`;
-    document.querySelector('body > div > table > tbody > tr:nth-child(6) > td').innerHTML = tilesInfo.join(
-      '<br />',
-    );
-    document.querySelector(
-      'body > div > table > tbody > tr:nth-child(7) > td',
-    ).innerHTML = `<span style="color: yellow;">${diff}</span>`;
+    const table = document.getElementById('table');
+    table.rows[0].cells[1].innerHTML = result.duration;
+    table.rows[1].cells[1].innerHTML = result.score;
+    table.rows[2].cells[1].innerHTML = result.score * 3;
+    table.rows[3].cells[1].innerHTML = result.speeds.join('<span style="color: lime;">, </span>');
+    table.rows[4].cells[1].innerHTML = result.baseBeats.join('<span style="color: lime;">, </span>');
+    table.rows[5].cells[1].innerHTML = tilesInfo.join('<br />');
+    table.rows[6].cells[1].innerHTML = diff;
     document.querySelector('body > div > div.box3').style.display = 'block';
     document.querySelector('tbody').style.display = 'block';
   })
