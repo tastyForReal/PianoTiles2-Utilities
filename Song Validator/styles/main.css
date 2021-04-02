@@ -141,12 +141,19 @@ table {
   color: white;
   font-family: 'uni_sanssemibold';
   font-size: 16px;
-  text-align: center;
   padding: 16px 16px 24px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 th {
   color: lime;
+  width: 190px;
+  text-align: left;
+}
+
+td {
+  color: yellow;
 }
 
 .button {
