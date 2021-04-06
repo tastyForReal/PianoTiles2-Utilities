@@ -510,10 +510,6 @@ const parseTrack = (score = '', fullJson = '', partNum = 0, trkNum = 0) => {
           throw new Error('There was an unknown error parsing note length!');
         }
 
-        if (trkNum === 1) {
-          totalDurations.push(length);
-        }
-
         trackLength.push(length);
 
         if (!combo && !double && !slide) {
@@ -578,10 +574,6 @@ const parseTrack = (score = '', fullJson = '', partNum = 0, trkNum = 0) => {
       } else if (rest) {
         if (mode === 0) {
           trackLength.push(rest);
-
-          if (trkNum === 1) {
-            totalDurations.push(rest);
-          }
 
           if (!combo && !double && !slide) {
             allNotes.push([0, rest]);
@@ -1151,9 +1143,36 @@ const checkErrors = data => new Promise((resolve, reject) => {
     });
     allPoints[2] = allBgPoints.reduce((a, b) => a + b, 0);
     pointsPerRound = allPoints.reduce((a, b) => a + b, 0);
+    totalDurations.push(
+      ...[].concat(
+        firstTracks.map(t => {
+          const p = t
+            .replace(/empty|mute|[\d!#$%&(),.;<>@A-G[\]a-g{}~^-]/g, '')
+            .replace(/Q/g, 'RR')
+            .replace(/R/g, 'SS')
+            .replace(/S/g, 'TT')
+            .replace(/T/g, 'UU')
+            .replace(/U/g, 'VV')
+            .replace(/V/g, 'WW')
+            .replace(/W/g, 'XX')
+            .replace(/X/g, 'YY')
+            .replace(/Y/g, 'P')
+            .replace(/H/g, 'II')
+            .replace(/I/g, 'JJ')
+            .replace(/J/g, 'KK')
+            .replace(/K/g, 'LL')
+            .replace(/L/g, 'MM')
+            .replace(/M/g, 'NN')
+            .replace(/N/g, 'OO')
+            .replace(/O/g, 'PP');
+          return (p.match(/P/g) || []).length;
+        }),
+      ),
+    );
     durationInSeconds = Math.round(
-      (totalDurations.reduce((a, b) => a + b, 0) * (0.03125 / songBaseBeats / midiBaseBeats))
-          / (songBpm / songBaseBeats / 60),
+      totalDurations
+        .map((n, i) => (n * (0.03125 / allBaseBeats[i])) / arraySpeeds[i])
+        .reduce((a, b) => a + b, 0),
     );
   } else {
     reject(new Error('"musics" in JSON file is missing!'));
