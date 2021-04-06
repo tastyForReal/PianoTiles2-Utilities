@@ -128,6 +128,13 @@ const execute = () => checkErrors(editor.getValue())
     table.rows[0].cells[1].innerHTML = result.duration;
     table.rows[1].cells[1].innerHTML = result.score;
     table.rows[2].cells[1].innerHTML = result.score * 3;
+
+    if (result.speeds.length === 1) {
+      table.rows[3].cells[0].innerHTML = 'Speed:';
+    } else {
+      table.rows[3].cells[0].innerHTML = 'Speeds:';
+    }
+
     table.rows[3].cells[1].innerHTML = result.speeds.join('<span style="color: lime;">, </span>');
     table.rows[4].cells[1].innerHTML = result.baseBeats.join('<span style="color: lime;">, </span>');
     table.rows[5].cells[1].innerHTML = tilesInfo.join('<br />');
