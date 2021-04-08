@@ -1142,7 +1142,7 @@ const checkErrors = data => new Promise((resolve, reject) => {
       return normalFirstTrackCalc;
     });
     allPoints[2] = allBgPoints.reduce((a, b) => a + b, 0);
-    pointsPerRound = allPoints.reduce((a, b) => a + b, 0);
+    pointsPerRound = allPoints.reduce((a, b) => a + b, 0).toFixed();
     totalDurations.push(
       ...[].concat(
         firstTracks.map(t => {
